@@ -1,0 +1,37 @@
+<h3>Ng if</h3>
+@if(logado && autenticado){
+  usuario logado e autenticado!
+}
+@else if (logado && !autenticado) {
+  usuario logado mas não autenticado
+}
+@else {
+  usuario não logado
+}
+
+<h3>ng switch</h3>
+@switch (status) {
+  @case ('aprovado') {
+    aluno aprovado
+  }
+  @case ('reprovado') {
+    aluno reprovado
+  }
+  @default {
+    aluno não está cursando
+  }
+}
+
+<h3>ng for</h3>
+@for (filme of filmes; track $index) {
+  <p>{{filme}}</p>
+}@empty {
+  lista de filmes vazia
+}
+
+<h3 #marcador>deferrable</h3>
+@defer (on hover(marcador)) {
+  <app-filme [titulo]="filme"/>
+} @placeholder {
+  <div>Carregando</div>
+}
